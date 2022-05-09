@@ -38,7 +38,7 @@
             <button id="start" onclick="window.trainer.start()">
                 Старт!
             </button>
-            <button id="clear">
+            <button id="clear" onclick="window.trainer.clear(); window.trainer.end_color_indicator(); window.trainer.reset();">
                 Очистить
             </button>
             <button id="notime">
@@ -48,10 +48,10 @@
             <p id="indicator_err">Ошибок: 0</p>
             <table>
                 <tr>
-                    <td>Время показа:</td><td><input type="range" id="showtime" value="3"></td>
+                    <td id="showtime_indicator">Время показа:</td><td><input type="range" id="showtime" value="1" min="1" max="100" step="1" onchange="window.trainer.update_showtime()"></td>
                 </tr>
                 <tr>
-                    <td>Время задержки:</td><td><input type="range" id="delaytime" value="3"></td>
+                    <td id="delaytime_indicator">Время задержки:</td><td><input type="range" id="delaytime" value="1" min="1" max="100" step="1" onchange="window.trainer.update_delaytime()"></td>
                 </tr>
                 <tr>
                     <td>

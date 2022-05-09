@@ -1,10 +1,12 @@
 class Trainer{
     constructor(){
         this.change_size();
-        this.blocks=[];
-        this.status=0;
         this.showtime=2000;
         this.delaytime=100;
+        this.update_showtime();
+        this.update_delaytime();
+        this.blocks=[];
+        this.status=0;
         this.correct=0;
         this.errors=0;
         this.partly_corret=0;
@@ -113,11 +115,18 @@ class Trainer{
             block.style.backgroundColor="#FFFFFF";
         }
     }
+    reset(){
+        this.correct=0;
+        this.errors=0;
+        indicator_ok.innerHTML="Верно: "+this.correct;
+        indicator_err.innerHTML="Ошибок: "+this.errors;
+    }
     block_click(block_num){
         if(this.status==3){
             var block=document.getElementById("block"+(block_num));
             if(this.blocks[block_num-1]==1){
                 block.style.backgroundColor="#00FF00";
+                this.blocks[block_num-1]=2;
                 this.partly_corret--;
                 if(this.partly_corret<=0){
                     this.correct++;
@@ -127,7 +136,7 @@ class Trainer{
                     setTimeout(function(){that.clear(true,that)},500);
                 }
             }
-            else{
+            else if(this.blocks[block_num-1]==0){
                 block.style.backgroundColor="#000000";
                 this.errors++;
                 indicator_err.innerHTML="Ошибок: "+this.errors;
@@ -136,6 +145,16 @@ class Trainer{
     }
     end_color_indicator(){
         color_indicator.style.backgroundColor="#FFFFFF";
+    }
+    update_showtime(){
+        // exp(1/x)*y=10; exp(100/x)*y=10000
+        this.showtime=parseInt(Math.exp(parseInt(showtime.value)/14.33)*9.32);
+        showtime_indicator.innerHTML="Время показа: "+this.showtime+ " ms";
+    }
+    update_delaytime(){
+        //exp(1/x)*y-1=0; exp(100/x)*y-1=10000
+        this.delaytime=parseInt(Math.exp(parseInt(delaytime.value)/10.74)*0.91-1);
+        delaytime_indicator.innerHTML="Время задержки: "+this.delaytime+ " ms";
     }
 }
 
