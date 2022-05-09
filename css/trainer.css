@@ -1,0 +1,30 @@
+nav{
+    visibility: visible;
+}
+main {
+    visibility: hidden;
+    width: 0px;
+    height: 0px;
+}
+aside table td{
+    border: 1px black solid;
+}
+.color_indicator{
+    width: 150px;
+    height: 150px;
+    color: #FFFFFF;
+    background-color: #FFFFFF;
+}
+@media (orientation: landscape) {
+    aside table{
+        width: 60vh;
+        height: 60vh;
+    }
+}
+  
+@media (orientation: portrait) {
+    aside table{
+        width: 60vw;
+        height: 60vw;
+    }
+}

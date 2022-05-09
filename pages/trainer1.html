@@ -3,12 +3,13 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" href="/style/trainer.css" type="text/css">
+        <link rel="icon" type="image/x-icon" href="/pictures/logo.png">
         <title>
             Тренажёр v 1
         </title>
     </head>
     <body>
-        <nav>
+        <nav id="sizer">
             <h2>
                 Задайте размеры поля
             </h2>
@@ -21,14 +22,52 @@
                 </tr>
                 <tr>
                     <td>
-                        <button>
+                        <button onclick="window.trainer.change_size(true)">
                             Ок
                         </button>
                     </td>
                 </tr>
+            </table>
         </nav>
-        <main>
-
+        <main id="main_view">
+            <aside>
+                <table id="blocks">
+                    
+                </table>
+            </aside>
+            <button id="start" onclick="window.trainer.start()">
+                Старт!
+            </button>
+            <button id="clear">
+                Очистить
+            </button>
+            <button id="notime">
+                Без времени
+            </button>
+            <p id="indicator_ok">Верно: 0</p>
+            <p id="indicator_err">Ошибок: 0</p>
+            <table>
+                <tr>
+                    <td>Время показа:</td><td><input type="range" id="showtime" value="3"></td>
+                </tr>
+                <tr>
+                    <td>Время задержки:</td><td><input type="range" id="delaytime" value="3"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <button onclick="window.trainer.ask_change()">
+                            Изменить размер
+                        </button>
+                    </td>
+                    <td>
+                        <div id="color_indicator" class="color_indicator">
+                            Выберите все ячейки заданного цвета!
+                        </div>
+                    </td>
+                </tr>
+            </table>
         </main>
+        <script src="/script/trainer1.js">
+        </script>
     </body>
 <html>
