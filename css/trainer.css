@@ -22,6 +22,7 @@ aside table td{
     }
     aside{
         float:left;
+        margin-right:2vh;
     }
 }
   
