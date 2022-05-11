@@ -13,9 +13,18 @@ class Trainer{
         this.notimeval=0;
     }
     change_size(start=false){
-        this.vt=parseInt(window.vt.value);
-        this.hr=parseInt(window.hr.value);
+        if(localStorage.getItem("vt") && localStorage.getItem("hr") && !start){
+            this.vt=localStorage.getItem("vt");
+            this.hr=localStorage.getItem("hr");
+            start=true;
+        }
+        else{
+            this.vt=parseInt(window.vt.value);
+            this.hr=parseInt(window.hr.value);
+        }
         if(start){
+            localStorage.setItem("vt", this.vt);
+            localStorage.setItem("hr", this.hr);
             window.sizer.style.visibility="hidden";
             window.main_view.style.visibility="visible";
             window.sizer.style.width="0px";
@@ -82,7 +91,7 @@ class Trainer{
             }
             var that=this;
             if(!timed){
-                setTimeout(function(){ that.hide_blocks(that) },that.showtime);
+                this.hide_blocks_timeout=setTimeout(function(){ that.hide_blocks(that) },that.showtime);
             }
         }
     }
@@ -104,7 +113,7 @@ class Trainer{
         }
         that.clear(false,that);
         that.status=2;
-        setTimeout(function(){color_indicator.style.backgroundColor=that.colorOne; that.status=3;},that.delaytime);
+        this.color_indicator_timeout=setTimeout(function(){color_indicator.style.backgroundColor=that.colorOne; that.status=3;},that.delaytime);
     }
     clear(full=false,that=false){
         if(!that){
@@ -121,6 +130,10 @@ class Trainer{
     reset(){
         this.correct=0;
         this.errors=0;
+        this.status=0;
+        clearTimeout(this.color_indicator_timeout);
+        clearTimeout(this.clear_timeout);
+        clearTimeout(this.hide_blocks_timeout);
         indicator_ok.innerHTML="Верно: "+this.correct;
         indicator_err.innerHTML="Ошибок: "+this.errors;
     }
@@ -136,7 +149,7 @@ class Trainer{
                     indicator_ok.innerHTML="Верно: "+this.correct;
                     this.end_color_indicator();
                     var that=this;
-                    setTimeout(function(){that.clear(true,that)},500);
+                    this.clear_timeout=setTimeout(function(){that.clear(true,that)},500);
                 }
             }
             else if(this.blocks[block_num-1]==0){
