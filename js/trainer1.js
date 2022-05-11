@@ -10,6 +10,7 @@ class Trainer{
         this.correct=0;
         this.errors=0;
         this.partly_corret=0;
+        this.notimeval=0;
     }
     change_size(start=false){
         this.vt=parseInt(window.vt.value);
@@ -58,7 +59,7 @@ class Trainer{
         }
         return [number,number_inverse];
     }
-    start(){
+    start(timed=false){
         if(this.status==0 || this.status==3){
             this.end_color_indicator();
             this.partly_corret=0;
@@ -80,7 +81,9 @@ class Trainer{
                 }
             }
             var that=this;
-            setTimeout(function(){ that.hide_blocks(that) },that.showtime);
+            if(!timed){
+                setTimeout(function(){ that.hide_blocks(that) },that.showtime);
+            }
         }
     }
     colorGenerator(){
@@ -140,6 +143,23 @@ class Trainer{
                 block.style.backgroundColor="#000000";
                 this.errors++;
                 indicator_err.innerHTML="Ошибок: "+this.errors;
+            }
+        }
+    }
+    notime(){  
+        if(this.notimeval==0){
+            if(this.status==0 || this.status==3){
+                this.start(true);
+                notime.innerHTML="Скрыть";
+                this.notimeval=1;
+            }
+        }
+        else{
+            if(this.status==1){
+                var that=this;
+                this.hide_blocks(that);
+                this.notimeval=0;
+                notime.innerHTML="Без времени";
             }
         }
     }
