@@ -1,0 +1,21 @@
+@media (orientation: portrait) {
+    body{
+        padding:0px;
+        margin:0px
+    }
+    div{
+        padding-left:18px;
+        margin:0px;
+        width: 100%;
+        word-wrap: break-word;
+    }
+    h1{
+        font-size: 80px;
+    }
+    body{
+        font-size: 60px;
+    }
+}
+@media (orientation: landscape) {
+
+}
