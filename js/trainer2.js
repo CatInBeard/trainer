@@ -162,7 +162,7 @@ class Trainer{
         if(this.status==3){
             var block=document.getElementById("block"+(block_num));
             if(this.blocks[block_num-1]==1){
-                block.style.backgroundColor="#00FF00";
+                block.style.backgroundColor=this.colorOne;
                 this.blocks[block_num-1]=2;
                 this.partly_corret--;
                 if(this.partly_corret<=0){
