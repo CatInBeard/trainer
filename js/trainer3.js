@@ -151,11 +151,17 @@ class Trainer{
             that=this;
         }
         this.makeNoise();
-        that.status=2;
-        that.status=3; 
+        that.status=2; 
         that.clear();
+        this.hide_blocks_timeout=setTimeout(function(){ that.hide_blocks_extend(that) },350);
+    }
+    hide_blocks_extend(that=false){
+        if(!that){
+            that=this;
+        }
         that.math_ex();
-        color_indicator.style.backgroundColor=that.colorOne;
+        that.status=3; 
+        color_indicator.style.backgroundColor=that.colorOne;   
     }
     makeNoise(){
         for(var i=0;i<this.vt*this.hr;i++){
