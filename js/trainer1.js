@@ -134,8 +134,8 @@ class Trainer{
         clearTimeout(this.color_indicator_timeout);
         clearTimeout(this.clear_timeout);
         clearTimeout(this.hide_blocks_timeout);
-        indicator_ok.innerHTML="Верно: "+this.correct;
-        indicator_err.innerHTML="Ошибок: "+this.errors;
+        indicator_ok.innerHTML="ВЕРНО: "+this.correct;
+        indicator_err.innerHTML="ОШИБОК: "+this.errors;
     }
     block_click(block_num){
         if(this.status==3){
@@ -146,7 +146,7 @@ class Trainer{
                 this.partly_corret--;
                 if(this.partly_corret<=0){
                     this.correct++;
-                    indicator_ok.innerHTML="Верно: "+this.correct;
+                    indicator_ok.innerHTML="ВЕРНО: "+this.correct;
                     this.end_color_indicator();
                     var that=this;
                     this.clear_timeout=setTimeout(function(){that.clear(true,that)},500);
@@ -155,7 +155,7 @@ class Trainer{
             else if(this.blocks[block_num-1]==0){
                 block.style.backgroundColor="#000000";
                 this.errors++;
-                indicator_err.innerHTML="Ошибок: "+this.errors;
+                indicator_err.innerHTML="ОШИБОК: "+this.errors;
             }
         }
     }
@@ -163,7 +163,7 @@ class Trainer{
         if(this.notimeval==0){
             if(this.status==0 || this.status==3){
                 this.start(true);
-                notime.innerHTML="Скрыть";
+                notime.innerHTML="СКРЫТЬ";
                 this.notimeval=1;
             }
         }
@@ -172,7 +172,7 @@ class Trainer{
                 var that=this;
                 this.hide_blocks(that);
                 this.notimeval=0;
-                notime.innerHTML="Без времени";
+                notime.innerHTML="БЕЗ ВРЕМЕНИ";
             }
         }
     }
@@ -182,12 +182,12 @@ class Trainer{
     update_showtime(){
         // exp(1/x)*y=10; exp(100/x)*y=10000
         this.showtime=parseInt(Math.exp(parseInt(showtime.value)/14.33)*9.32);
-        showtime_indicator.innerHTML="Время показа: "+this.showtime+ " ms";
+        showtime_indicator.innerHTML="ВРЕМЯ ПОКАЗА: "+this.showtime+ " ms";
     }
     update_delaytime(){
         //exp(1/x)*y-1=0; exp(100/x)*y-1=10000
         this.delaytime=parseInt(Math.exp(parseInt(delaytime.value)/10.74)*0.91-1);
-        delaytime_indicator.innerHTML="Время задержки: "+this.delaytime+ " ms";
+        delaytime_indicator.innerHTML="ВРЕМЯ ЗАДЕРЖКИ: "+this.delaytime+ " ms";
     }
 }
 

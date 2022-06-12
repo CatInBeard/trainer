@@ -1,0 +1,158 @@
+* {
+    margin: 0;
+}
+
+body {
+    background: $bg;
+}
+
+body .cat {
+    background: $white;
+    position: relative;
+    margin: 0 auto;
+
+    h1 {
+        background: $bg-h;
+    }
+
+    .logo {
+        background: $logo;
+        position: absolute;
+
+        p {
+            position: relative;
+        }
+
+        p::before {
+            position: absolute;
+            content: '';
+            background-image: url("/img/favicon2.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+
+        a {
+            text-decoration: none;
+        }
+
+        a:link,
+        a:visited {
+            color: $not-hover;
+        }
+
+        a:hover {
+            color: $logo;
+        }
+    }
+}
+
+@media (orientation: landscape) {
+    body {
+        padding: 70px 30px;
+    }
+
+    h1 {
+        @include font(22px, 700, $white, 43px, 0.7px);
+        padding-left: 19px;
+        border-radius: 150px;
+    }
+
+    body .cat {
+        border-radius: 45px;
+        padding: 25px 25px 50px;
+        max-width: 600px;
+        min-width: 290px;
+
+        .logo {
+            right: 25px;
+            top: 25px;
+            height: 43px;
+            border-radius: 150px;
+            width: 113px;  
+            
+            p {
+                @include font(18px, 700, $white, 43px, -0.3px);
+                margin-left: 42px;
+            }
+
+            p::before {
+                width: 33px;
+                height: 33px;
+                top: 5px;
+                left: -38px;
+            }
+        }
+
+        a {
+            @include font(18px, 600, $not-hover, 22px, 0.7px);
+        }
+
+        a:active {
+            color: $not-hover;
+        }
+
+        li {
+            margin-top: 35px;
+            margin-left: 35px;
+        }
+    }
+}
+
+@media (orientation: portrait) {
+    body {
+        padding: 17vw 4vw;
+
+        .bg {
+            height: 100%;
+        }
+    }
+
+    h1 {
+        @include font(3.3vw, 700, $white, 8.5vw, 0.39vw);
+        padding-left: 3vw;
+        border-radius: 150vw;
+    }
+
+    body .cat {
+        border-radius: 9vw;
+        padding: 5vw 5vw 10vw;
+
+        .logo {
+            right: 5vw;
+            top: 5vw;
+            height: 8.5vw;
+            border-radius: 83vw;
+            width: 22.5vw;
+
+            p {
+                @include font(3.3vw, 700, $white, 8.5vw, 0.1vw);
+                margin-left: 8.5vw;
+            }
+
+            p::before {
+                width: 7vw;
+                height: 7vw;
+                top: 0.75vw;
+                left: -7.7vw;
+            }
+        }
+
+        a {
+            @include font(3.3vw, 600, $white, 8.5vw, 0.01vw);
+        }
+
+        a:active {
+            color: $logo;
+        }
+
+        li {
+            margin-top: 5vw;
+            margin-left: 5vw;
+        }
+    }
+}

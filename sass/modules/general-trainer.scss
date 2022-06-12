@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+}
+
+body {
+    background: $bg;
+}
+
+header {
+    background: $bg-h;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+
+    .logo {
+        background: $logo;
+        
+        p {
+            position: relative;
+        }
+
+        p::before {
+            position: absolute;
+            content: '';
+            background-image: url("/img/favicon2.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    a:link,
+    a:visited {
+        color: $white;
+    }
+}
+
+h1 {
+    text-align: center;
+}
+
+@media (orientation: landscape) {
+    $h-ls: 45px;
+
+    header{
+        height: $h-ls;
+
+        .logo {
+            height: $h-ls;
+            width: 120px;
+            border-bottom-right-radius: 200px;
+            border-top-right-radius: 200px;
+            margin-right: 50px;
+
+            p {
+                @include font(19px, 700, $white, $h-ls, 0);
+                margin-left: 45px;
+            }
+
+            p::before {
+                width: 35px;
+                height: 35px;
+                top: 5px;
+                left: -40px;
+            }
+        }
+
+        a,
+        p {
+            @include font(22px, 700, $white, $h-ls, 1.3px);
+            margin-right: 50px;
+            cursor: pointer;
+        }
+
+        a:hover,
+        p:hover {
+            @include font(22px, 700, $logo, $h-ls, 1.3px);
+            margin-right: 50px;
+        }
+    }
+
+    h1 {
+        @include font(22px, 700, $not-hover, 22pxpx, 1.3px);
+    }
+}
+
+@media (orientation: portrait) {
+    header{
+        $h-mobile: 10vw;
+
+        height: $h-mobile;
+
+        .logo {
+            height: $h-mobile;
+            width: 25vw;
+            border-bottom-right-radius: 100vw;
+            border-top-right-radius: 100vw;
+            margin-right: 5vw;
+
+
+            p {
+                @include font(3.9vw, 700, $white, 10vw, 0);
+                margin-left: 9.5vw;
+            }
+
+            p::before {
+                width: 7.6vw;
+                height: 7.6vw;
+                top: 1vw;
+                left: -8vw;
+            }
+        }
+
+        a,
+        p {
+            @include font(3.6vw, 700, $white, 10vw, 0.3vw);
+            margin-right: 5vw;
+        }
+
+        a:active,
+        p:active {
+            @include font(3.6vw, 700, $logo, 10vw, 0.3vw);
+            margin-right: 5vw;
+        }
+    }
+
+    h1 {
+        @include font(3vw, 700, $not-hover, 3vw, 0.3vw);
+    }
+}

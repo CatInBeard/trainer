@@ -1,0 +1,14 @@
+@mixin font($size, $weight, $color, $line-height, $spacing) {
+    font-family: Montserrat, sans-serif;
+    color: $color;
+    font-weight: $weight;
+    line-height: $line-height;
+    font-size: $size;
+    letter-spacing: $spacing;
+}
+
+.hidden-on {
+    visibility: hidden;
+    width: 0;
+    height: 0;
+}
