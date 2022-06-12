@@ -533,13 +533,102 @@ main .color_indicator {
   #sizer button:hover {
     background: #606779;
   }
+  #sizer .ml {
+    margin-left: 20px;
+  }
 }
 @media (orientation: portrait) {
+  #sizer {
+    margin: 6vw auto;
+    width: 85vw;
+    padding: 3vw;
+    border-radius: 7.5vw;
+  }
+  #sizer p {
+    font-family: Montserrat, sans-serif;
+    color: #606779;
+    font-weight: 700;
+    line-height: 9vw;
+    font-size: 3.6vw;
+    letter-spacing: 0.3vw;
+    margin-bottom: 2vw;
+  }
+  #sizer h2 {
+    font-family: Montserrat, sans-serif;
+    color: #ffffff;
+    font-weight: 700;
+    line-height: 9vw;
+    font-size: 3.6vw;
+    letter-spacing: 0.3vw;
+    background: #b0b0bf;
+    border-radius: 100vw;
+    padding-left: 4.5vw;
+    margin-bottom: 8vw;
+  }
+  #sizer .input-container {
+    width: 38vw;
+    margin-bottom: 7vw;
+  }
+  #sizer input {
+    height: 7vw;
+    padding: 1vw 3vw;
+    font-family: Montserrat, sans-serif;
+    color: #606779;
+    font-weight: 700;
+    line-height: 7vw;
+    font-size: 3.6vw;
+    letter-spacing: 0.3vw;
+    border: 0.5vw solid #dddce5;
+    border-radius: 0.95vw;
+    width: 15vw;
+  }
+  #sizer input:hover {
+    border: 0.5vw solid #b0b0bf;
+  }
+  #sizer a {
+    text-decoration: none;
+    font-family: Montserrat, sans-serif;
+    color: #ffffff;
+    font-weight: 700;
+    line-height: 7vw;
+    font-size: 5vw;
+    letter-spacing: 0.3vw;
+    width: 7.5vw;
+    text-align: center;
+  }
+  #sizer a:first-child {
+    padding-top: 0.7vw;
+    border-top-right-radius: 8.9vw;
+    border-bottom-right-radius: 8.9vw;
+    border-top-left-radius: 50vw;
+    border-bottom-left-radius: 50vw;
+  }
+  #sizer a:last-child {
+    padding-top: 1vw;
+    border-top-left-radius: 8.9vw;
+    border-bottom-left-radius: 8.9vw;
+    border-top-right-radius: 50vw;
+    border-bottom-right-radius: 50vw;
+  }
+  #sizer button {
+    font-family: Montserrat, sans-serif;
+    color: #ffffff;
+    font-weight: 700;
+    line-height: 9vw;
+    font-size: 3.6vw;
+    letter-spacing: 0.3vw;
+    border-radius: 50vw;
+    width: 36vw;
+    margin-left: 24vw;
+  }
   #sizer a:active {
     background: #606779;
   }
   #sizer button:active {
     background: #606779;
+  }
+  #sizer .ml {
+    margin-left: 5vw;
   }
 }
 

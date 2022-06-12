@@ -16,19 +16,21 @@
         </header>
         <nav id="sizer">
             <h2>ЗАДАЙТЕ РАЗМЕРЫ ПОЛЯ</h2>
-            <p>ПО ВЕРТИКАЛИ:</p>
-            <div class="input-container">
-                <a id="vtMinus" href="#">-</a>
-                <input type="number" id="vt" value="3">
-                <a id="vtPlus" href="#">+</a>
+            <div class="ml">
+                <p>ПО ВЕРТИКАЛИ:</p>
+                <div class="input-container">
+                    <a id="vtMinus" href="#">-</a>
+                    <input type="number" id="vt" value="3">
+                    <a id="vtPlus" href="#">+</a>
+                </div>
+                <p>ПО ГОРИЗОНТАЛИ:</p>
+                <div class="input-container">
+                    <a id="hrMinus" href="#">-</a>
+                    <input type="number" id="hr" value="3">
+                    <a id="hrPlus" href="#">+</a>
+                </div>
+                <button onclick="window.trainer.change_size(true)">ПРИМЕНИТЬ</button>
             </div>
-            <p>ПО ГОРИЗОНТАЛИ:</p>
-            <div class="input-container">
-                <a id="hrMinus" href="#">-</a>
-                <input type="number" id="hr" value="3">
-                <a id="hrPlus" href="#">+</a>
-            </div>
-            <button onclick="window.trainer.change_size(true)">ПРИМЕНИТЬ</button>
         </nav>
         <main id="main_view">
             <div class="container">
@@ -64,8 +66,5 @@
             </div>
         </main>
         <script src="/js/trainer1.js"></script>
-        <script src="/js/library/jquery/dist/jquery.min.js"></script>
-        <script src="js/input-number.js"></script>
-        </script>
     </body>
 <html>

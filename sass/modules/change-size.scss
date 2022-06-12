@@ -106,17 +106,91 @@
         button:hover {
             background: $logo;
         }
+
+        .ml {
+            margin-left: 20px;
+        }
     }
 }
 
 @media (orientation: portrait) {
     #sizer {
+        margin: 6vw auto;
+        width: 85vw;
+        padding: 3vw;
+        border-radius: 7.5vw;
+
+        p {
+            @include font(3.6vw, 700, $logo, 9vw, 0.3vw);
+            margin-bottom: 2vw;
+        }
+
+        h2 {
+            @include font(3.6vw, 700, $white, 9vw, 0.3vw);
+            background: $bg-h;
+            border-radius: 100vw;
+            padding-left: 4.5vw;
+            margin-bottom: 8vw;
+        }
+
+        .input-container{
+            width: 38vw;
+            margin-bottom: 7vw;
+        }
+
+        input {
+            height: 7vw;
+            padding: 1vw 3vw;
+            @include font(3.6vw, 700, $logo, 7vw, 0.3vw);
+            border: 0.5vw solid $bg;
+            border-radius: 0.95vw;
+            width: 15vw;
+        }
+
+        input:hover {
+            border: 0.5vw solid $bg-h;
+        }
+
+        a {
+            text-decoration: none;
+            @include font(5vw, 700, $white, 7vw, 0.3vw);
+            width: 7.5vw;
+            text-align: center;
+        }
+
+        a:first-child {
+            padding-top: 0.7vw;
+            border-top-right-radius: 8.9vw;
+            border-bottom-right-radius: 8.9vw;
+            border-top-left-radius: 50vw;
+            border-bottom-left-radius: 50vw;
+        }
+
+        a:last-child {
+            padding-top: 1vw;
+            border-top-left-radius: 8.9vw;
+            border-bottom-left-radius: 8.9vw;
+            border-top-right-radius: 50vw;
+            border-bottom-right-radius: 50vw;
+        }
+
+        button {
+            @include font(3.6vw, 700, $white, 9vw, 0.3vw);
+            border-radius: 50vw;
+            width: 36vw;
+            margin-left: 24vw;
+        }
+
         a:active {
             background: $logo;
         }
 
         button:active {
             background: $logo;
+        }
+
+        .ml {
+            margin-left: 5vw;
         }
     }
 }
