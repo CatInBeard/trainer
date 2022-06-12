@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: Montserrat, sans-serif;
   src: url("font/Montserrat/Montserrat-Regular.ttf");
@@ -338,7 +339,7 @@ main .color_indicator {
   }
 
   .setting-button {
-    margin-bottom: 5vw;
+    margin-bottom: 10vw;
   }
   .setting-button p {
     font-family: Montserrat, sans-serif;
@@ -629,6 +630,105 @@ main .color_indicator {
   }
   #sizer .ml {
     margin-left: 5vw;
+  }
+}
+input[type=range] {
+  -webkit-appearance: none;
+  width: 20%;
+}
+
+input[type=range]:focus {
+  outline: none;
+}
+
+/* Полоса в Хроме */
+input[type=range]::-webkit-slider-runnable-track {
+  background: #b0b0bf;
+  cursor: pointer;
+  animate: 0.2s;
+}
+
+/* Бегунок в Хроме */
+input[type=range]::-webkit-slider-thumb {
+  background: #b0b0bf;
+  cursor: pointer;
+  -webkit-appearance: none;
+  border: none;
+}
+
+/* Полоса в Мозиле */
+input[type=range]::-moz-range-track {
+  background: #b0b0bf;
+  cursor: pointer;
+  animate: 0.2s;
+}
+
+/* Бегунок в Мозиле */
+input[type=range]::-moz-range-thumb {
+  background: #b0b0bf;
+  cursor: pointer;
+  -webkit-appearance: none;
+  border: none;
+}
+
+@media (orientation: landscape) {
+  input[type=range] {
+    -webkit-appearance: none;
+    width: 300px;
+  }
+
+  input[type=range]::-webkit-slider-runnable-track {
+    border-radius: 100px;
+    height: 6px;
+  }
+
+  input[type=range]::-moz-range-track {
+    border-radius: 100px;
+    height: 6px;
+  }
+
+  input[type=range]::-webkit-slider-thumb {
+    height: 15px;
+    width: 15px;
+    border-radius: 15px;
+    margin-top: -14px;
+  }
+
+  input[type=range]::-moz-range-thumb {
+    height: 15px;
+    width: 15px;
+    border-radius: 15px;
+    margin-top: -14px;
+  }
+}
+@media (orientation: portrait) {
+  input[type=range] {
+    -webkit-appearance: none;
+    width: 32vw;
+  }
+
+  input[type=range]::-webkit-slider-runnable-track {
+    border-radius: 100px;
+    height: 1.5vw;
+  }
+
+  input[type=range]::-moz-range-track {
+    border-radius: 100px;
+    height: 1.5vw;
+  }
+
+  input[type=range]::-webkit-slider-thumb {
+    height: 4vw;
+    width: 4vw;
+    border-radius: 4vw;
+    margin-top: -3.9vw;
+  }
+
+  input[type=range]::-moz-range-thumb {
+    height: 4vw;
+    width: 4vw;
+    border-radius: 4vw;
+    margin-top: -3.9vw;
   }
 }
 
