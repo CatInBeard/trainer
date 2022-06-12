@@ -25,12 +25,8 @@ class Trainer{
         if(start){
             localStorage.setItem("vt", this.vt);
             localStorage.setItem("hr", this.hr);
-            window.sizer.style.visibility="hidden";
-            window.main_view.style.visibility="visible";
-            window.sizer.style.width="0px";
-            window.sizer.style.height="0px";
-            window.main_view.style.width="auto";
-            window.main_view.style.height="auto";
+            window.sizer.classList.add("hidden-on");
+            window.main_view.classList.remove("hidden-on");
             
             var cells="";
             var count=0;
@@ -46,12 +42,8 @@ class Trainer{
         }
     }
     ask_change(){
-        window.sizer.style.visibility="visible";
-        window.main_view.style.visibility="hidden";
-        window.sizer.style.width="auto";
-        window.sizer.style.height="auto";
-        window.main_view.style.width="0px";
-        window.main_view.style.height="0px";
+        window.sizer.classList.remove("hidden-on");
+        window.main_view.classList.add("hidden-on");
     }
     numGen(){
         var number;

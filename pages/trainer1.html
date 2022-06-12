@@ -15,20 +15,20 @@
             <p onclick="window.trainer.ask_change()">ИЗМЕНИТЬ РАЗМЕР</p>
         </header>
         <nav id="sizer">
-            <h2>Задайте размеры поля</h2>
-            <table>
-                <tr>
-                    <td>По вертикали:</td><td><input type="number" id="vt" value="3"></td>
-                </tr>
-                <tr>
-                    <td>По горизонтали:</td><td><input type="number" id="hr" value="3"></td>
-                </tr>
-                <tr>
-                    <td>
-                        <button onclick="window.trainer.change_size(true)">Ок</button>
-                    </td>
-                </tr>
-            </table>
+            <h2>ЗАДАЙТЕ РАЗМЕРЫ ПОЛЯ</h2>
+            <p>ПО ВЕРТИКАЛИ:</p>
+            <div class="input-container">
+                <a id="vtMinus" href="#">-</a>
+                <input type="number" id="vt" value="3">
+                <a id="vtPlus" href="#">+</a>
+            </div>
+            <p>ПО ГОРИЗОНТАЛИ:</p>
+            <div class="input-container">
+                <a id="hrMinus" href="#">-</a>
+                <input type="number" id="hr" value="3">
+                <a id="hrPlus" href="#">+</a>
+            </div>
+            <button onclick="window.trainer.change_size(true)">ПРИМЕНИТЬ</button>
         </nav>
         <main id="main_view">
             <div class="container">
@@ -63,7 +63,9 @@
                 </div>
             </div>
         </main>
-        <script src="/js/trainer1.js">
+        <script src="/js/trainer1.js"></script>
+        <script src="/js/library/jquery/dist/jquery.min.js"></script>
+        <script src="js/input-number.js"></script>
         </script>
     </body>
 <html>
