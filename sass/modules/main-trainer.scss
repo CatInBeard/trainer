@@ -36,7 +36,7 @@ main {
 
     .color_indicator{
         color: $white;
-        background-color: $white;
+        background-color: aquamarine;
     }
 }
 
@@ -194,7 +194,7 @@ main {
     }
 
     .setting-button {
-        margin-bottom: 60px;
+        margin-bottom: 5vw;
 
         p {
             @include font(3.6vw, 700, $white, 10vw, 0.3vw);
@@ -225,6 +225,39 @@ main {
 
         p:hover {
             background: $logo;
+        }
+    }
+
+    .slider {
+        margin-top: 4vw;
+
+        p {
+            @include font(3.6vw, 700, $logo, 5vw, 0.3vw);
+        }
+    }
+
+    .true-false {
+        margin-top: 3vw;
+        p {
+            @include font(3.6vw, 700, $logo, 5vw, 0.3vw);
+            margin-top: 2vw;
+        }
+    }
+
+    .slider:last-child {
+        margin-bottom: 0;
+    }
+
+    .color_indicator {
+        width: 27vw;
+        height: 27vw;
+        border-radius: 7vw;
+        padding: 3vw;
+        margin-left: 36vw;
+        margin-top: 3vw;
+
+        p {
+            @include font(3.6vw, 700, $white, 5vw, 0);
         }
     }
 }

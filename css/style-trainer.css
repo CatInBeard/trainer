@@ -189,7 +189,7 @@ main .slider {
 }
 main .color_indicator {
   color: #ffffff;
-  background-color: #ffffff;
+  background-color: aquamarine;
 }
 
 @media (orientation: landscape) {
@@ -335,7 +335,7 @@ main .color_indicator {
   }
 
   .setting-button {
-    margin-bottom: 60px;
+    margin-bottom: 5vw;
   }
   .setting-button p {
     font-family: Montserrat, sans-serif;
@@ -366,6 +366,52 @@ main .color_indicator {
   }
   .setting-button p:hover {
     background: #606779;
+  }
+
+  .slider {
+    margin-top: 4vw;
+  }
+  .slider p {
+    font-family: Montserrat, sans-serif;
+    color: #606779;
+    font-weight: 700;
+    line-height: 5vw;
+    font-size: 3.6vw;
+    letter-spacing: 0.3vw;
+  }
+
+  .true-false {
+    margin-top: 3vw;
+  }
+  .true-false p {
+    font-family: Montserrat, sans-serif;
+    color: #606779;
+    font-weight: 700;
+    line-height: 5vw;
+    font-size: 3.6vw;
+    letter-spacing: 0.3vw;
+    margin-top: 2vw;
+  }
+
+  .slider:last-child {
+    margin-bottom: 0;
+  }
+
+  .color_indicator {
+    width: 27vw;
+    height: 27vw;
+    border-radius: 7vw;
+    padding: 3vw;
+    margin-left: 36vw;
+    margin-top: 3vw;
+  }
+  .color_indicator p {
+    font-family: Montserrat, sans-serif;
+    color: #ffffff;
+    font-weight: 700;
+    line-height: 5vw;
+    font-size: 3.6vw;
+    letter-spacing: 0;
   }
 }
 
