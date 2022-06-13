@@ -2,77 +2,64 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" href="/style/trainer.css" type="text/css">
-        <link rel="icon" type="image/x-icon" href="/pictures/logo.png">
-        <title>
-            Тренажёр v 3
-        </title>
+        <link rel="stylesheet" href="/css/style-trainer.css" type="text/css">
+        <link rel="icon" type="image/x-icon" href="/img/logo1.png">
+        <title>Тренажeр v3</title>
     </head>
     <body>
+        <header>
+            <div class="logo">
+                <p>trainer</p>
+            </div>
+            <a href="/">КАТАЛОГ</a>
+            <p onclick="window.trainer.ask_change()">ИЗМЕНИТЬ РАЗМЕР</p>
+        </header>
         <nav id="sizer">
-            <h2>
-                Задайте размеры поля
-            </h2>
-            <table>
-                <tr>
-                    <td>По вертикали:</td><td><input type="number" id="vt" value="3"></td>
-                </tr>
-                <tr>
-                    <td>По горизонтали:</td><td><input type="number" id="hr" value="3"></td>
-                </tr>
-                <tr>
-                    <td>
-                        <button onclick="window.trainer.change_size(true)">
-                            Ок
-                        </button>
-                    </td>
-                </tr>
-            </table>
+            <h2>ЗАДАЙТЕ РАЗМЕРЫ ПОЛЯ</h2>
+            <div class="ml">
+                <p>ПО ВЕРТИКАЛИ:</p>
+                <div class="input-container">
+                    <a id="vtMinus" href="#">-</a>
+                    <input type="number" id="vt" value="3">
+                    <a id="vtPlus" href="#">+</a>
+                </div>
+                <p>ПО ГОРИЗОНТАЛИ:</p>
+                <div class="input-container">
+                    <a id="hrMinus" href="#">-</a>
+                    <input type="number" id="hr" value="3">
+                    <a id="hrPlus" href="#">+</a>
+                </div>
+                <button onclick="window.trainer.change_size(true)">ПРИМЕНИТЬ</button>
+            </div>
         </nav>
         <main id="main_view">
-            <aside>
-                <table id="blocks">
-                    
-                </table>
-            </aside>
-            <button id="start" onclick="window.trainer.start()">
-                Старт!
-            </button>
-            <button id="clear" onclick="window.trainer.clear(); window.trainer.end_color_indicator(); window.trainer.reset();">
-                Очистить
-            </button>
-            <button id="notime" onclick="window.trainer.notime()">
-                Без времени
-            </button>
-            <br>
-            <p id="indicator_ok">Верно: 0</p>
-            <p id="indicator_err">Ошибок: 0</p>
-            <table>
-                <tr>
-                    <td id="showtime_indicator">Время показа:</td><td><input type="range" id="showtime" value="1" min="1" max="100" step="1" onchange="window.trainer.update_showtime()"></td>
-                </tr>
-                <tr>
-                    <td>
-                        <button onclick="window.trainer.ask_change()">
-                            Изменить размер
-                        </button>
-                    </td>
-                    <td>
-                        <div id="color_indicator" class="color_indicator">
-                            Выберите все ячейки заданного цвета!
+            <div class="container">
+                <aside>
+                    <table id="blocks">
+                        
+                    </table>
+                </aside>
+                <div class="setting">
+                    <div class="setting-button">
+                        <p id="start" onclick="window.trainer.start()">СТАРТ</p>
+                        <p id="notime" onclick="window.trainer.notime()">БЕЗ ВРЕМЕНИ</p>
+                        <p id="clear" onclick="window.trainer.clear(); window.trainer.end_color_indicator(); window.trainer.reset();">ОЧИСТИТЬ</p>
+                    </div>
+                    <div class = "slider">
+                        <p id="showtime_indicator">ВРЕМЯ ПОКАЗА:</p>
+                        <input type="range" id="showtime" value="1" min="1" max="100" step="1" onchange="window.trainer.update_showtime()">
+                    </div>
+                    <div class="slider">
+                        <div class = "true-false">
+                            <p id="indicator_ok">ВЕРНО: 0</p>
+                            <p id="indicator_err">ОШИБОК: 0</p>
                         </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="/">
-                            <button>
-                                Другие версии
-                            </button>
-                        </a>
-                    </td>
-                </tr>
-            </table>
+                        <div id="color_indicator" class="color_indicator">
+                            <p>Выберите все ячейки заданного цвета!</p>
+                        </div>
+                    <div></div>
+                </div>
+            </div>
         </main>
         <script src="/script/trainer3.js">
         </script>

@@ -1,0 +1,196 @@
+#sizer {
+    background: $white;
+
+    .input-container {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+    }
+
+    a {
+        background: $bg-h;
+    }
+
+    input[type='number'] {
+        -moz-appearance:textfield;
+        outline: none;
+    }
+    
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+    }
+
+    button {
+        border: none;
+        outline: none;
+        background: $bg-h;
+    }
+
+    
+}
+
+@media (orientation: landscape) {
+    #sizer {
+        width: 550px;
+        margin: 100px auto;
+        padding: 25px;
+        border-radius: 45px;
+
+        p {
+            @include font(18px, 700, $logo, 22px, 0.7px);
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            @include font(22px, 700, $white, 43px, 0.7px);
+            background: $bg-h;
+            border-radius: 100px;
+            padding-left: 19px;
+            margin-bottom: 40px;
+        }
+
+        .input-container{
+            width: 230px;
+            margin-bottom: 30px;
+        }
+
+        input {
+            height: 25px;
+            padding: 5px 19px;
+            @include font(18px, 700, $logo, 22px, 0.7px);
+            border: 2px solid $bg;
+            border-radius: 5px;
+            width: 100px;
+        }
+
+        input:hover {
+            border: 2px solid $bg-h;
+        }
+
+        a {
+            text-decoration: none;
+            @include font(25px, 700, $white, 25px, 0.7px);
+            width: 40px;
+            text-align: center;
+            padding-top: 7px;
+        }
+
+        a:first-child {
+            padding-top: 4px;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            border-top-left-radius: 50px;
+            border-bottom-left-radius: 50px;
+        }
+
+        a:last-child {
+            padding-top: 7px;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+            border-top-right-radius: 50px;
+            border-bottom-right-radius: 50px;
+        }
+
+        a:hover {
+            background: $logo;
+        }
+
+        button {
+            @include font(18px, 700, $white, 46px, 0.7px);
+            border-radius: 50px;
+            width: 170px;
+            margin-left: 180px;
+        }
+
+        button:hover {
+            background: $logo;
+        }
+
+        .ml {
+            margin-left: 20px;
+        }
+    }
+}
+
+@media (orientation: portrait) {
+    #sizer {
+        margin: 6vw auto;
+        width: 85vw;
+        padding: 3vw;
+        border-radius: 7.5vw;
+
+        p {
+            @include font(3.6vw, 700, $logo, 9vw, 0.3vw);
+            margin-bottom: 2vw;
+        }
+
+        h2 {
+            @include font(3.6vw, 700, $white, 9vw, 0.3vw);
+            background: $bg-h;
+            border-radius: 100vw;
+            padding-left: 4.5vw;
+            margin-bottom: 8vw;
+        }
+
+        .input-container{
+            width: 38vw;
+            margin-bottom: 7vw;
+        }
+
+        input {
+            height: 7vw;
+            padding: 1vw 3vw;
+            @include font(3.6vw, 700, $logo, 7vw, 0.3vw);
+            border: 0.5vw solid $bg;
+            border-radius: 0.95vw;
+            width: 15vw;
+        }
+
+        input:hover {
+            border: 0.5vw solid $bg-h;
+        }
+
+        a {
+            text-decoration: none;
+            @include font(5vw, 700, $white, 7vw, 0.3vw);
+            width: 7.5vw;
+            text-align: center;
+        }
+
+        a:first-child {
+            padding-top: 0.7vw;
+            border-top-right-radius: 8.9vw;
+            border-bottom-right-radius: 8.9vw;
+            border-top-left-radius: 50vw;
+            border-bottom-left-radius: 50vw;
+        }
+
+        a:last-child {
+            padding-top: 1vw;
+            border-top-left-radius: 8.9vw;
+            border-bottom-left-radius: 8.9vw;
+            border-top-right-radius: 50vw;
+            border-bottom-right-radius: 50vw;
+        }
+
+        button {
+            @include font(3.6vw, 700, $white, 9vw, 0.3vw);
+            border-radius: 50vw;
+            width: 36vw;
+            margin-left: 24vw;
+        }
+
+        a:active {
+            background: $logo;
+        }
+
+        button:active {
+            background: $logo;
+        }
+
+        .ml {
+            margin-left: 5vw;
+        }
+    }
+}

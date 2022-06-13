@@ -2,10 +2,7 @@ RewriteEngine on
     RewriteBase /
     RewriteRule ^trainer/v/1(.*)$   /pages/trainer1.html                             [L]
     RewriteRule ^trainer/v/2(.*)$   /pages/trainer2.html                             [L]
-    RewriteRule ^trainer/v/3(.*)$   /pages/trainer3.html                             [L]
-    RewriteRule ^style/(.*)$        /css/$1                                          [L]
-    RewriteRule ^script/(.*)$       /js/$1                                           [L]
-    RewriteRule ^pictures/(.*)$     /img/$1                                          [L]
+    RewriteRule ^trainer/v/3(.*)$   /pages/trainer3.html                             [L]                                                                         [L]
     RewriteRule ^index.php$         /index.php/$1                                    [L]
     RewriteRule ^$                  /pages/cat.html
 

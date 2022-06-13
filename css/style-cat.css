@@ -1,0 +1,211 @@
+@font-face {
+  font-family: Montserrat, sans-serif;
+  src: url("font/Montserrat/Montserrat-Regular.ttf");
+}
+* {
+  margin: 0;
+}
+
+body {
+  background: #dddce5;
+}
+
+body .cat {
+  background: #ffffff;
+  position: relative;
+  margin: 0 auto;
+}
+body .cat h1 {
+  background: #b0b0bf;
+}
+body .cat .logo {
+  background: #606779;
+  position: absolute;
+}
+body .cat .logo p {
+  position: relative;
+}
+body .cat .logo p::before {
+  position: absolute;
+  content: "";
+  background-image: url("/img/favicon2.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+body .cat ul {
+  list-style-type: none;
+  padding: 0;
+}
+body .cat ul a {
+  text-decoration: none;
+}
+body .cat ul a:link,
+body .cat ul a:visited {
+  color: #81819b;
+}
+body .cat ul a:hover {
+  color: #606779;
+}
+
+@media (orientation: landscape) {
+  body {
+    padding: 70px 30px;
+  }
+
+  h1 {
+    font-family: Montserrat, sans-serif;
+    color: #ffffff;
+    font-weight: 700;
+    line-height: 43px;
+    font-size: 22px;
+    letter-spacing: 0.7px;
+    padding-left: 19px;
+    border-radius: 150px;
+  }
+
+  body .cat {
+    border-radius: 45px;
+    padding: 25px 25px 50px;
+    max-width: 600px;
+    min-width: 290px;
+  }
+  body .cat .logo {
+    right: 25px;
+    top: 25px;
+    height: 43px;
+    border-radius: 150px;
+    width: 113px;
+  }
+  body .cat .logo p {
+    font-family: Montserrat, sans-serif;
+    color: #ffffff;
+    font-weight: 700;
+    line-height: 43px;
+    font-size: 18px;
+    letter-spacing: -0.3px;
+    margin-left: 42px;
+  }
+  body .cat .logo p::before {
+    width: 33px;
+    height: 33px;
+    top: 5px;
+    left: -38px;
+  }
+  body .cat a {
+    font-family: Montserrat, sans-serif;
+    color: #81819b;
+    font-weight: 600;
+    line-height: 22px;
+    font-size: 18px;
+    letter-spacing: 0.7px;
+  }
+  body .cat a:active {
+    color: #81819b;
+  }
+  body .cat li {
+    margin-top: 35px;
+    margin-left: 35px;
+  }
+}
+@media (orientation: portrait) {
+  body {
+    /*
+    padding: 70px 30px;
+    */
+    padding: 17vw 4vw;
+  }
+  body .bg {
+    height: 100%;
+  }
+
+  h1 {
+    /*
+    @include font(14px, 700, $white, 34px, 0.7px);
+    */
+    font-family: Montserrat, sans-serif;
+    color: #ffffff;
+    font-weight: 700;
+    line-height: 8.5vw;
+    font-size: 3.3vw;
+    letter-spacing: 0.39vw;
+    padding-left: 3vw;
+    border-radius: 150vw;
+    /*
+    padding-left: 1.3rem;
+    */
+  }
+
+  body .cat {
+    border-radius: 9vw;
+    /*
+    padding: 20px 20px 40px;
+    max-width: 600px;
+    min-width: 290px;
+    border-radius: 35px;
+    */
+    padding: 5vw 5vw 10vw;
+  }
+  body .cat .logo {
+    /*
+    right: 20px;
+    top: 20px;
+    height: 34px;
+    border-radius: 150px;
+    width: 89px;
+    */
+    right: 5vw;
+    top: 5vw;
+    height: 8.5vw;
+    border-radius: 83vw;
+    width: 22.5vw;
+  }
+  body .cat .logo p {
+    /*
+    @include font(14px, 700, $white, 34px, -0.3px);
+    margin-left: 35px;
+    */
+    font-family: Montserrat, sans-serif;
+    color: #ffffff;
+    font-weight: 700;
+    line-height: 8.5vw;
+    font-size: 3.3vw;
+    letter-spacing: 0.1vw;
+    margin-left: 8.5vw;
+  }
+  body .cat .logo p::before {
+    /*
+    width: 27px;
+    height: 27px;
+    top: 3px;
+    left: -30px;
+    */
+    width: 7vw;
+    height: 7vw;
+    top: 0.75vw;
+    left: -7.7vw;
+  }
+  body .cat a {
+    /*
+    @include font(14px, 600, $not-hover, 34px, -0.3px);
+    */
+    font-family: Montserrat, sans-serif;
+    color: #ffffff;
+    font-weight: 600;
+    line-height: 8.5vw;
+    font-size: 3.3vw;
+    letter-spacing: 0.01vw;
+  }
+  body .cat a:active {
+    color: #606779;
+  }
+  body .cat li {
+    margin-top: 5vw;
+    margin-left: 5vw;
+    /*
+    margin-top: 20px;
+    margin-left: 20px;
+    */
+  }
+}
+
+/*# sourceMappingURL=style-cat.css.map */
