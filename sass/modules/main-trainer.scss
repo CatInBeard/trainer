@@ -194,7 +194,7 @@ main {
     }
 
     .setting-button {
-        margin-bottom: 10vw;
+        margin-bottom: 7vw;
 
         p {
             @include font(3.6vw, 700, $white, 10vw, 0.3vw);
@@ -237,6 +237,7 @@ main {
     }
 
     .true-false {
+        width: 40vw;
         margin-top: 3vw;
         p {
             @include font(3.6vw, 700, $logo, 5vw, 0.3vw);
@@ -249,15 +250,15 @@ main {
     }
 
     .color_indicator {
-        width: 27vw;
-        height: 27vw;
+        width: 20vw;
+        height: 20vw;
         border-radius: 7vw;
         padding: 3vw;
-        margin-left: 36vw;
+        margin-left: 24vw;
         margin-top: 3vw;
 
         p {
-            @include font(3.6vw, 700, $white, 5vw, 0);
+            @include font(3.6vw, 700, $white, 4vw, 0);
         }
     }
 }

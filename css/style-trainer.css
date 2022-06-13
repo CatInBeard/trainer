@@ -142,6 +142,8 @@ header p {
     line-height: 10vw;
     font-size: 3.6vw;
     letter-spacing: 0.3vw;
+  }
+  header a {
     margin-right: 5vw;
   }
   header a:active,
@@ -339,7 +341,7 @@ main .color_indicator {
   }
 
   .setting-button {
-    margin-bottom: 10vw;
+    margin-bottom: 7vw;
   }
   .setting-button p {
     font-family: Montserrat, sans-serif;
@@ -385,6 +387,7 @@ main .color_indicator {
   }
 
   .true-false {
+    width: 40vw;
     margin-top: 3vw;
   }
   .true-false p {
@@ -402,18 +405,18 @@ main .color_indicator {
   }
 
   .color_indicator {
-    width: 27vw;
-    height: 27vw;
+    width: 20vw;
+    height: 20vw;
     border-radius: 7vw;
     padding: 3vw;
-    margin-left: 36vw;
+    margin-left: 24vw;
     margin-top: 3vw;
   }
   .color_indicator p {
     font-family: Montserrat, sans-serif;
     color: #ffffff;
     font-weight: 700;
-    line-height: 5vw;
+    line-height: 4vw;
     font-size: 3.6vw;
     letter-spacing: 0;
   }
@@ -691,7 +694,7 @@ input[type=range]::-moz-range-thumb {
     height: 15px;
     width: 15px;
     border-radius: 15px;
-    margin-top: -14px;
+    margin-top: -5px;
   }
 
   input[type=range]::-moz-range-thumb {
@@ -721,7 +724,7 @@ input[type=range]::-moz-range-thumb {
     height: 4vw;
     width: 4vw;
     border-radius: 4vw;
-    margin-top: -3.9vw;
+    margin-top: -1.3vw;
   }
 
   input[type=range]::-moz-range-thumb {
