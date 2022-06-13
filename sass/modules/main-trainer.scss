@@ -127,6 +127,7 @@ main {
     }
 
     .true-false {
+        width: 200px;
         p {
             @include font(20px, 700, $logo, 46px, 0.7px);
         }
@@ -141,7 +142,7 @@ main {
         height: 155px;
         border-radius: 35px;
         padding: 20px;
-        margin-left: 337px;
+        margin-left: 260px;
         margin-top: 20px;
 
         p {

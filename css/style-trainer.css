@@ -279,6 +279,9 @@ main .color_indicator {
     letter-spacing: 0.7px;
   }
 
+  .true-false {
+    width: 200px;
+  }
   .true-false p {
     font-family: Montserrat, sans-serif;
     color: #606779;
@@ -297,7 +300,7 @@ main .color_indicator {
     height: 155px;
     border-radius: 35px;
     padding: 20px;
-    margin-left: 337px;
+    margin-left: 260px;
     margin-top: 20px;
   }
   .color_indicator p {
