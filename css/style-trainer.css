@@ -28,6 +28,7 @@ header {
 }
 header .logo {
   background: #606779;
+  cursor: default;
 }
 header .logo p {
   position: relative;
@@ -62,7 +63,8 @@ h1 {
     border-top-right-radius: 200px;
     margin-right: 50px;
   }
-  header .logo p {
+  header .logo p,
+header .logo p:hover {
     font-family: Montserrat, sans-serif;
     color: #ffffff;
     font-weight: 700;
@@ -119,7 +121,8 @@ header p:hover {
     border-top-right-radius: 100vw;
     margin-right: 5vw;
   }
-  header .logo p {
+  header .logo p,
+header .logo p:active {
     font-family: Montserrat, sans-serif;
     color: #ffffff;
     font-weight: 700;

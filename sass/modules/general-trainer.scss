@@ -14,6 +14,7 @@ header {
 
     .logo {
         background: $logo;
+        cursor: default;
         
         p {
             position: relative;
@@ -55,7 +56,8 @@ h1 {
             border-top-right-radius: 200px;
             margin-right: 50px;
 
-            p {
+            p,
+            p:hover {
                 @include font(19px, 700, $white, $h-ls, 0);
                 margin-left: 45px;
             }
@@ -101,7 +103,8 @@ h1 {
             margin-right: 5vw;
 
 
-            p {
+            p,
+            p:active {
                 @include font(3.9vw, 700, $white, 10vw, 0);
                 margin-left: 9.5vw;
             }
