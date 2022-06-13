@@ -24,12 +24,8 @@ class Trainer{
         if(start){
             localStorage.setItem("vt", this.vt);
             localStorage.setItem("hr", this.hr);
-            window.sizer.style.visibility="hidden";
-            window.main_view.style.visibility="visible";
-            window.sizer.style.width="0px";
-            window.sizer.style.height="0px";
-            window.main_view.style.width="auto";
-            window.main_view.style.height="auto";
+            window.sizer.classList.add("hidden-on");
+            window.main_view.classList.remove("hidden-on");
             
             var cells="";
             var count=0;
@@ -45,12 +41,8 @@ class Trainer{
         }
     }
     ask_change(){
-        window.sizer.style.visibility="visible";
-        window.main_view.style.visibility="hidden";
-        window.sizer.style.width="auto";
-        window.sizer.style.height="auto";
-        window.main_view.style.width="0px";
-        window.main_view.style.height="0px";
+        window.sizer.classList.remove("hidden-on");
+        window.main_view.classList.add("hidden-on");
     }
     numGenSingle(){
         var number;
@@ -151,11 +143,17 @@ class Trainer{
             that=this;
         }
         this.makeNoise();
-        that.status=2;
-        that.status=3; 
+        that.status=2; 
         that.clear();
+        this.hide_blocks_timeout=setTimeout(function(){ that.hide_blocks_extend(that) },350);
+    }
+    hide_blocks_extend(that=false){
+        if(!that){
+            that=this;
+        }
         that.math_ex();
-        color_indicator.style.backgroundColor=that.colorOne;
+        that.status=3; 
+        color_indicator.style.backgroundColor=that.colorOne;   
     }
     makeNoise(){
         for(var i=0;i<this.vt*this.hr;i++){
@@ -182,14 +180,26 @@ class Trainer{
         clearTimeout(this.color_indicator_timeout);
         clearTimeout(this.clear_timeout);
         clearTimeout(this.hide_blocks_timeout);
-        indicator_ok.innerHTML="Верно: "+this.correct;
-        indicator_err.innerHTML="Ошибок: "+this.errors;
+        indicator_ok.innerHTML="ВЕРНО: "+this.correct;
+        indicator_err.innerHTML="ОШИБОК: "+this.errors;
+    }
+    vtPlus(count){
+        window.vt.value=parseInt(parseInt(window.vt.value)+count);
+        if(window.vt.value<2){
+            window.vt.value=2;
+        }
+    }
+    hrPlus(count){
+        window.hr.value=parseInt(parseInt(window.hr.value)+count);
+        if(window.hr.value<2){
+            window.hr.value=2;
+        }
     }
     block_click(block_num){
         if(this.status==3){
             var block=document.getElementById("block"+(block_num));
             if(this.blocks[block_num-1]==1){
-                block.style.backgroundColor="#00FF00";
+                block.style.backgroundColor=this.colorOne;
                 this.blocks[block_num-1]=2;
                 this.partly_corret--;
                 if(this.partly_corret<=0){
@@ -201,9 +211,9 @@ class Trainer{
                 }
             }
             else if(this.blocks[block_num-1]==0){
-                block.style.backgroundColor="#000000";
+                block.style.backgroundColor="#606779";
                 this.errors++;
-                indicator_err.innerHTML="Ошибок: "+this.errors;
+                indicator_err.innerHTML="ОШИБОК: "+this.errors;
             }
         }
     }
@@ -211,7 +221,7 @@ class Trainer{
         if(this.notimeval==0){
             if(this.status==0 || this.status==3){
                 this.start(true);
-                notime.innerHTML="Скрыть";
+                notime.innerHTML="СКРЫТЬ";
                 this.notimeval=1;
             }
         }
@@ -220,7 +230,7 @@ class Trainer{
                 var that=this;
                 this.hide_blocks(that);
                 this.notimeval=0;
-                notime.innerHTML="Без времени";
+                notime.innerHTML="БЕЗ ВРЕМЕНИ";
             }
         }
     }
@@ -230,7 +240,7 @@ class Trainer{
     update_showtime(){
         // exp(1/x)*y=10; exp(100/x)*y=10000
         this.showtime=parseInt(Math.exp(parseInt(showtime.value)/14.33)*9.32);
-        showtime_indicator.innerHTML="Время показа: "+this.showtime+ " ms";
+        showtime_indicator.innerHTML="ВРЕМЯ ПОКАЗА: "+this.showtime+ " ms";
     }
 }
 
