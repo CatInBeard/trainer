@@ -180,8 +180,8 @@ class Trainer{
         clearTimeout(this.color_indicator_timeout);
         clearTimeout(this.clear_timeout);
         clearTimeout(this.hide_blocks_timeout);
-        indicator_ok.innerHTML="Верно: "+this.correct;
-        indicator_err.innerHTML="Ошибок: "+this.errors;
+        indicator_ok.innerHTML="ВЕРНО: "+this.correct;
+        indicator_err.innerHTML="ОШИБОК: "+this.errors;
     }
     vtPlus(count){
         window.vt.value=parseInt(parseInt(window.vt.value)+count);
@@ -213,7 +213,7 @@ class Trainer{
             else if(this.blocks[block_num-1]==0){
                 block.style.backgroundColor="#606779";
                 this.errors++;
-                indicator_err.innerHTML="Ошибок: "+this.errors;
+                indicator_err.innerHTML="ОШИБОК: "+this.errors;
             }
         }
     }
@@ -221,7 +221,7 @@ class Trainer{
         if(this.notimeval==0){
             if(this.status==0 || this.status==3){
                 this.start(true);
-                notime.innerHTML="Скрыть";
+                notime.innerHTML="СКРЫТЬ";
                 this.notimeval=1;
             }
         }
@@ -230,7 +230,7 @@ class Trainer{
                 var that=this;
                 this.hide_blocks(that);
                 this.notimeval=0;
-                notime.innerHTML="Без времени";
+                notime.innerHTML="БЕЗ ВРЕМЕНИ";
             }
         }
     }
@@ -240,7 +240,7 @@ class Trainer{
     update_showtime(){
         // exp(1/x)*y=10; exp(100/x)*y=10000
         this.showtime=parseInt(Math.exp(parseInt(showtime.value)/14.33)*9.32);
-        showtime_indicator.innerHTML="Время показа: "+this.showtime+ " ms";
+        showtime_indicator.innerHTML="ВРЕМЯ ПОКАЗА: "+this.showtime+ " ms";
     }
 }
 
