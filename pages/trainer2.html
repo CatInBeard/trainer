@@ -19,15 +19,15 @@
             <div class="ml">
                 <p>ПО ВЕРТИКАЛИ:</p>
                 <div class="input-container">
-                    <a id="vtMinus" href="#">-</a>
+                    <a id="vtMinus" href="#" onclick="window.trainer.ltPlus(-1);">-</a>
                     <input type="number" id="vt" value="3">
-                    <a id="vtPlus" href="#">+</a>
+                    <a id="vtPlus" href="#" onclick="window.trainer.ltPlus(1);">+</a>
                 </div>
                 <p>ПО ГОРИЗОНТАЛИ:</p>
                 <div class="input-container">
-                    <a id="hrMinus" href="#">-</a>
+                    <a id="hrMinus" href="#" onclick="window.trainer.hrPlus(-1);">-</a>
                     <input type="number" id="hr" value="3">
-                    <a id="hrPlus" href="#">+</a>
+                    <a id="hrPlus" href="#" onclick="window.trainer.hrPlus(1);">+</a>
                 </div>
                 <button onclick="window.trainer.change_size(true)">ПРИМЕНИТЬ</button>
             </div>

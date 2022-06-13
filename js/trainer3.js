@@ -24,12 +24,8 @@ class Trainer{
         if(start){
             localStorage.setItem("vt", this.vt);
             localStorage.setItem("hr", this.hr);
-            window.sizer.style.visibility="hidden";
-            window.main_view.style.visibility="visible";
-            window.sizer.style.width="0px";
-            window.sizer.style.height="0px";
-            window.main_view.style.width="auto";
-            window.main_view.style.height="auto";
+            window.sizer.classList.add("hidden-on");
+            window.main_view.classList.remove("hidden-on");
             
             var cells="";
             var count=0;
@@ -45,12 +41,8 @@ class Trainer{
         }
     }
     ask_change(){
-        window.sizer.style.visibility="visible";
-        window.main_view.style.visibility="hidden";
-        window.sizer.style.width="auto";
-        window.sizer.style.height="auto";
-        window.main_view.style.width="0px";
-        window.main_view.style.height="0px";
+        window.sizer.classList.remove("hidden-on");
+        window.main_view.classList.add("hidden-on");
     }
     numGenSingle(){
         var number;
@@ -191,6 +183,18 @@ class Trainer{
         indicator_ok.innerHTML="Верно: "+this.correct;
         indicator_err.innerHTML="Ошибок: "+this.errors;
     }
+    vtPlus(count){
+        window.vt.value=parseInt(parseInt(window.vt.value)+count);
+        if(window.vt.value<2){
+            window.vt.value=2;
+        }
+    }
+    hrPlus(count){
+        window.hr.value=parseInt(parseInt(window.hr.value)+count);
+        if(window.hr.value<2){
+            window.hr.value=2;
+        }
+    }
     block_click(block_num){
         if(this.status==3){
             var block=document.getElementById("block"+(block_num));
@@ -207,7 +211,7 @@ class Trainer{
                 }
             }
             else if(this.blocks[block_num-1]==0){
-                block.style.backgroundColor="#000000";
+                block.style.backgroundColor="#606779";
                 this.errors++;
                 indicator_err.innerHTML="Ошибок: "+this.errors;
             }

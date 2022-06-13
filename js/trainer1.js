@@ -129,6 +129,18 @@ class Trainer{
         indicator_ok.innerHTML="ВЕРНО: "+this.correct;
         indicator_err.innerHTML="ОШИБОК: "+this.errors;
     }
+    vtPlus(count){
+        window.vt.value=parseInt(parseInt(window.vt.value)+count);
+        if(window.vt.value<2){
+            window.vt.value=2;
+        }
+    }
+    hrPlus(count){
+        window.hr.value=parseInt(parseInt(window.hr.value)+count);
+        if(window.hr.value<2){
+            window.hr.value=2;
+        }
+    }
     block_click(block_num){
         if(this.status==3){
             var block=document.getElementById("block"+(block_num));
